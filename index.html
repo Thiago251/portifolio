@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago Oliveira | Portfólio & Certificados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Tema Dark Padrão */
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #161b22;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            color: #58a6ff;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #8b949e;
+            font-size: 1.1em;
+        }
+
+        /* Ações Principais (Imprimir/PDF) */
+        .acoes-topo {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .btn-pdf {
+            background: #238636;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+
+        .btn-pdf:hover {
+            background: #2ea043;
+        }
+
+        /* Filtros */
+        .filtros {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-filtro {
+            padding: 8px 14px;
+            border: 1px solid #30363d;
+            background: #21262d;
+            color: #c9d1d9;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: 0.2s;
+        }
+
+        .btn-filtro.ativo, .btn-filtro:hover {
+            background: #1f6feb;
+            color: #fff;
+            border-color: #58a6ff;
+        }
+
+        /* Categorias e Listas */
+        .categoria-bloco {
+            margin-bottom: 30px;
+        }
+
+        .categoria-bloco.esconder {
+            display: none;
+        }
+
+        h2 {
+            color: #58a6ff;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 5px;
+        }
+
+        .lista-certificados {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 10px;
+        }
+
+        .lista-certificados li {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-left: 4px solid #58a6ff;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: #c9d1d9;
+        }
+
+        /* Contato e Rodapé */
+        .contato {
+            margin-top: 30px;
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+        }
+
+        .contato a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+
+        /* Configurações para Impressão / PDF */
+        @media print {
+            body {
+                background-color: #fff !important;
+                color: #000 !important;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none !important;
+                border: none !important;
+                background: #fff !important;
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+
+            .acoes-topo, .filtros, .btn-pdf {
+                display: none !important;
+            }
+
+            .categoria-bloco.esconder {
+                display: block !important; /* Mostra tudo ao imprimir */
+            }
+
+            h1, h2 {
+                color: #000 !important;
+                border-color: #000 !important;
+            }
+
+            .lista-certificados li {
+                background: #fff !important;
+                color: #000 !important;
+                border: 1px solid #ccc !important;
+                border-left: 4px solid #333 !important;
+            }
+
+            footer, .contato a {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Botão para Imprimir em PDF -->
+        <div class="acoes-topo">
+            <button class="btn-pdf" onclick="imprimirPDF()">
+                🖨️ Imprimir / Salvar PDF
+            </button>
+        </div>
+
+        <header>
+            <h1>Thiago Oliveira</h1>
+            <p>Cursos & Certificações</p>
+        </header>
+
+        <!-- Filtros por Categoria -->
+        <div class="filtros">
+            <button class="btn-filtro ativo" onclick="filtrar(event, 'todos')">Todos</button>
+            <button class="btn-filtro" onclick="filtrar(event, 'seguranca')">Segurança & Pentest</button>
+            <button class="btn-filtro" onclick="filtrar(event, 'dados')">Data Science & IA</button>
+            <button class="btn-filtro" onclick="filtrar(event, 'dev')">Desenvolvimento & Web</button>
+            <button class="btn-filtro" onclick="filtrar(event, 'infra')">Hardware & IoT</button>
+            <button class="btn-filtro" onclick="filtrar(event, 'geral')">Gestão, LGPD & Diversos</button>
+        </div>
+
+        <!-- Conteúdo Separado por Categorias -->
+        <main id="conteudo">
+
+            <!-- Categoria: Segurança & Pentest -->
+            <div class="categoria-bloco seguranca">
+                <h2>Segurança da Informação, Pentest & Perícia</h2>
+                <ul class="lista-certificados">
+                    <li>ACHH Hardware Hacking EAD [BADUSB]</li>
+                    <li>Ataques de Negação de Serviço (DoS e DDoS) com Kali Linux</li>
+                    <li>Certificado Perícia Forense e Resposta a Incidentes no Contexto da LGPD</li>
+                    <li>Certificado Introdução ao Pentest</li>
+                    <li>Ciber Security</li>
+                    <li>Cibersegurança e Privacidade da Informação</li>
+                    <li>Curso Shell Script Automação de Tarefas e Pentest</li>
+                    <li>Detecção de Intrusos com AIDE</li>
+                    <li>Engenharia Social Completa, Phishing, OSINT & Malware</li>
+                    <li>Ethical Hacking Penetration Testing</li>
+                    <li>Fundamentos de Ethical Hacking Curso Prático</li>
+                    <li>IA na Prevenção de Fraude</li>
+                    <li>IT Security Specialist</li>
+                    <li>OSINT Investigação em Redes Sociais</li>
+                    <li>Pentest Web DECSTORE</li>
+                    <li>SecSummit</li>
+                    <li>Segurança da Informação</li>
+                </ul>
+            </div>
+
+            <!-- Categoria: Data Science & IA -->
+            <div class="categoria-bloco dados">
+                <h2>Data Science, Estatística & IA</h2>
+                <ul class="lista-certificados">
+                    <li>Python Fundamentos para Análise de Dados</li>
+                    <li>Data Science do Zero Com Python, R e Javascript</li>
+                    <li>Deep Learning Introdução com Keras e Python</li>
+                    <li>Deep Learning</li>
+                    <li>Formação Cientista de Dados</li>
+                    <li>Formação Cientista de Dados - O Curso Completo</li>
+                    <li>Fundamentos de Deep Learning: Conceitos e Implementações com Python</li>
+                    <li>Introdução à Ciência de Dados</li>
+                    <li>Modelos de Regressão do Zero em R p1</li>
+                    <li>Introdução à Estatística para Ciência de Dados</li>
+                    <li>Usando Chats Inteligentes para Análise de Dados e Machine Learning</li>
+                </ul>
+            </div>
+
+            <!-- Categoria: Desenvolvimento & Web -->
+            <div class="categoria-bloco dev">
+                <h2>Desenvolvimento de Software & Web</h2>
+                <ul class="lista-certificados">
+                    <li>Android WebServices com Retrofit e Imagens com Glide</li>
+                    <li>Backend Nodejs Express</li>
+                    <li>Certificado C#</li>
+                    <li>Curso Full Stack de MongoDB, NodeJS e React Native</li>
+                    <li>Introdução Android P2</li>
+                    <li>Introdução Android 1</li>
+                    <li>Laboratório Backend e Banco de Dados com MongoDB</li>
+                    <li>Lógica de Programação - Learncafe</li>
+                    <li>Programação em Python - Learncafe</li>
+                    <li>Testes de Software na Prática e Automação - Curso Completo</li>
+                    <li>Backend - Integração com Node.js 2</li>
+                </ul>
+            </div>
+
+            <!-- Categoria: Hardware & IoT -->
+            <div class="categoria-bloco infra">
+                <h2>Sistemas, Hardware & IoT</h2>
+                <ul class="lista-certificados">
+                    <li>Eletrônica/Microcontroladores para Fabricação Digital 1</li>
+                    <li>Laboratório de Internet das Coisas 2</li>
+                    <li>Laboratório de Internet das Coisas</li>
+                    <li>Kali Linux</li>
+                    <li>LINUX</li>
+                    <li>Processos de Fabricação e Introdução ao Software de Modelagem 3D 1</li>
+                </ul>
+            </div>
+
+            <!-- Categoria: Gestão, LGPD & Diversos -->
+            <div class="categoria-bloco geral">
+                <h2>Gestão, LGPD & Cursos Gerais</h2>
+                <ul class="lista-certificados">
+                    <li>Fundamentos da Lei Geral de Proteção de Dados (Nov/2023)</li>
+                    <li>Inglês</li>
+                    <li>Introdução à Audiodescrição (Out/2023)</li>
+                    <li>Profissional de TI e os Desafios Atuais</li>
+                    <li>Tecnologias e Seus Impactos</li>
+                    <li>Venda de Seguros</li>
+                    <li>Introdução ao Desenvolvimento Ágil</li>
+                </ul>
+            </div>
+
+        </main>
+
+        <!-- Contato -->
+        <section class="contato">
+            <h2>Contato</h2>
+            <p>Email: <a href="thiagooliveira1985@gmail.com">thiagooliveira1985@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/Thiago251" target="_blank">github.com/Thiago251</a></p>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Desenvolvido por Thiago Oliveira</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Função para filtrar categorias
+        function filtrar(e, categoria) {
+            const botoes = document.querySelectorAll('.btn-filtro');
+            botoes.forEach(btn => btn.classList.remove('ativo'));
+            e.currentTarget.classList.add('ativo');
+
+            const blocos = document.querySelectorAll('.categoria-bloco');
+            blocos.forEach(bloco => {
+                if (categoria === 'todos' || bloco.classList.contains(categoria)) {
+                    bloco.classList.remove('esconder');
+                } else {
+                    bloco.classList.add('esconder');
+                }
+            });
+        }
+
+        // Função para acionar a impressão/salvar PDF
+        function imprimirPDF() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>

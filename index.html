@@ -133,6 +133,27 @@
             border-radius: 6px;
             font-size: 0.95em;
             color: #c9d1d9;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .lista-certificados li:hover {
+            border-left-color: #1f6feb;
+            background: #161b22;
+        }
+
+        /* Badge de "NOVO" */
+        .badge-novo {
+            display: inline-block;
+            background: #238636;
+            color: #fff;
+            font-size: 0.65em;
+            font-weight: bold;
+            padding: 2px 7px;
+            border-radius: 10px;
+            margin-left: 8px;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Contato e Rodapé */
@@ -175,7 +196,7 @@
             }
 
             .categoria-bloco.esconder {
-                display: block !important; /* Mostra tudo ao imprimir */
+                display: block !important;
             }
 
             h1, h2 {
@@ -188,6 +209,11 @@
                 color: #000 !important;
                 border: 1px solid #ccc !important;
                 border-left: 4px solid #333 !important;
+            }
+
+            .badge-novo {
+                background: #333 !important;
+                color: #fff !important;
             }
 
             footer, .contato a {
@@ -246,6 +272,7 @@
                     <li>Pentest Web DECSTORE</li>
                     <li>SecSummit</li>
                     <li>Segurança da Informação</li>
+                    <li>Segurança Cibernética — Controles 7 a 12 do CIS Controls <span class="badge-novo">Novo</span></li>
                 </ul>
             </div>
 
@@ -292,6 +319,7 @@
                     <li>Eletrônica/Microcontroladores para Fabricação Digital 1</li>
                     <li>Laboratório de Internet das Coisas 2</li>
                     <li>Laboratório de Internet das Coisas</li>
+                    <li>Internet das Coisas (IoT) Aplicada para Resolução de Desafios — Agosto/2026 <span class="badge-novo">Novo</span></li>
                     <li>Kali Linux</li>
                     <li>LINUX</li>
                     <li>Processos de Fabricação e Introdução ao Software de Modelagem 3D 1</li>
@@ -303,6 +331,7 @@
                 <h2>Gestão, LGPD & Cursos Gerais</h2>
                 <ul class="lista-certificados">
                     <li>Fundamentos da Lei Geral de Proteção de Dados (Nov/2023)</li>
+                    <li>Proteção de Dados Pessoais no Setor Público — Agosto/2026 <span class="badge-novo">Novo</span></li>
                     <li>Inglês</li>
                     <li>Introdução à Audiodescrição (Out/2023)</li>
                     <li>Profissional de TI e os Desafios Atuais</li>

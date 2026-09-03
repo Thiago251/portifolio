@@ -133,27 +133,6 @@
             border-radius: 6px;
             font-size: 0.95em;
             color: #c9d1d9;
-            transition: border-color 0.2s, background 0.2s;
-        }
-
-        .lista-certificados li:hover {
-            border-left-color: #1f6feb;
-            background: #161b22;
-        }
-
-        /* Badge de "NOVO" */
-        .badge-novo {
-            display: inline-block;
-            background: #238636;
-            color: #fff;
-            font-size: 0.65em;
-            font-weight: bold;
-            padding: 2px 7px;
-            border-radius: 10px;
-            margin-left: 8px;
-            vertical-align: middle;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         /* Contato e Rodapé */
@@ -196,7 +175,7 @@
             }
 
             .categoria-bloco.esconder {
-                display: block !important;
+                display: block !important; /* Mostra tudo ao imprimir */
             }
 
             h1, h2 {
@@ -209,11 +188,6 @@
                 color: #000 !important;
                 border: 1px solid #ccc !important;
                 border-left: 4px solid #333 !important;
-            }
-
-            .badge-novo {
-                background: #333 !important;
-                color: #fff !important;
             }
 
             footer, .contato a {
@@ -257,9 +231,10 @@
                 <ul class="lista-certificados">
                     <li>ACHH Hardware Hacking EAD [BADUSB]</li>
                     <li>Ataques de Negação de Serviço (DoS e DDoS) com Kali Linux</li>
-                    <li>Certificado Perícia Forense e Resposta a Incidentes no Contexto da LGPD</li>
-                    <li>Certificado Introdução ao Pentest</li>
+                    <li>Perícia Forense e Resposta a Incidentes no Contexto da LGPD</li>
+                    <li> Introdução ao Pentest</li>
                     <li>Ciber Security</li>
+                    <li>Kali Linux</li>
                     <li>Cibersegurança e Privacidade da Informação</li>
                     <li>Curso Shell Script Automação de Tarefas e Pentest</li>
                     <li>Detecção de Intrusos com AIDE</li>
@@ -271,8 +246,9 @@
                     <li>OSINT Investigação em Redes Sociais</li>
                     <li>Pentest Web DECSTORE</li>
                     <li>SecSummit</li>
+                    <li>LINUX</li>
                     <li>Segurança da Informação</li>
-                    <li>Segurança Cibernética — Controles 7 a 12 do CIS Controls <span class="badge-novo">Novo</span></li>
+                    <li>Contra e Inteligencia 4.0</li>
                 </ul>
             </div>
 
@@ -291,6 +267,10 @@
                     <li>Modelos de Regressão do Zero em R p1</li>
                     <li>Introdução à Estatística para Ciência de Dados</li>
                     <li>Usando Chats Inteligentes para Análise de Dados e Machine Learning</li>
+                    <li>Introdução a Estatistica para Ciência de Dados - Descrição e Explocaração de Dados</li>
+                    <li>Introdução a Estatistica para Ciência de Dados - Relações, Agrupamentos e Testes</li>
+                    <li>Modelos Supervisionados para Texto (PLN aplicado)</li>
+                    <li>IA Generativa na Prática com Ollama</li>
                 </ul>
             </div>
 
@@ -300,15 +280,17 @@
                 <ul class="lista-certificados">
                     <li>Android WebServices com Retrofit e Imagens com Glide</li>
                     <li>Backend Nodejs Express</li>
-                    <li>Certificado C#</li>
+                    <li>C# Orientado a Objetos e Padrões de Projeto</li>
                     <li>Curso Full Stack de MongoDB, NodeJS e React Native</li>
                     <li>Introdução Android P2</li>
-                    <li>Introdução Android 1</li>
+                    <li>Introdução Android P1</li>
                     <li>Laboratório Backend e Banco de Dados com MongoDB</li>
-                    <li>Lógica de Programação - Learncafe</li>
-                    <li>Programação em Python - Learncafe</li>
-                    <li>Testes de Software na Prática e Automação - Curso Completo</li>
-                    <li>Backend - Integração com Node.js 2</li>
+                    <li>Lógica de Programação </li>
+                    <li>Programação em Python </li>
+                    <li>Testes de Software na Prática e Automação</li>
+                    <li>Backend - Integração com Node.js </li>
+                    <li>Linguagem C </li> 
+                    <li>Android: Jetpack e Arquitetura</li>
                 </ul>
             </div>
 
@@ -318,11 +300,9 @@
                 <ul class="lista-certificados">
                     <li>Eletrônica/Microcontroladores para Fabricação Digital 1</li>
                     <li>Laboratório de Internet das Coisas 2</li>
-                    <li>Laboratório de Internet das Coisas</li>
-                    <li>Internet das Coisas (IoT) Aplicada para Resolução de Desafios — Agosto/2026 <span class="badge-novo">Novo</span></li>
-                    <li>Kali Linux</li>
-                    <li>LINUX</li>
+                    <li>Laboratório de Internet das Coisas</li>                    
                     <li>Processos de Fabricação e Introdução ao Software de Modelagem 3D 1</li>
+                   
                 </ul>
             </div>
 
@@ -331,13 +311,14 @@
                 <h2>Gestão, LGPD & Cursos Gerais</h2>
                 <ul class="lista-certificados">
                     <li>Fundamentos da Lei Geral de Proteção de Dados (Nov/2023)</li>
-                    <li>Proteção de Dados Pessoais no Setor Público — Agosto/2026 <span class="badge-novo">Novo</span></li>
-                    <li>Inglês</li>
+                    <li>Inglês Intermediário</li>
                     <li>Introdução à Audiodescrição (Out/2023)</li>
                     <li>Profissional de TI e os Desafios Atuais</li>
                     <li>Tecnologias e Seus Impactos</li>
                     <li>Venda de Seguros</li>
                     <li>Introdução ao Desenvolvimento Ágil</li>
+                    <li>Desenvolvimento Ágil-Framework Scrum</li>
+                    <li>Desenvolvimento Ágil- Kanban</li>
                 </ul>
             </div>
 
